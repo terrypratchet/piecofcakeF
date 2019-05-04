@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import InfiniteScroll from 'react-infinite-scroller';
-import WordsListBox from './WordsListBox';
+import WordsListBox from './components/WordsListBox';
 import SentenceBox from './components/SentenceBox';
 class App extends React.Component {
 

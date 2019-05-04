@@ -1,8 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { selectSentence } from "./actions/index";
-
-
+import { selectSentence } from "../actions/index";
 
 const ConnectedWordsListBox  = ({words, selectSentence}) => {
   console.log("aaaaaaaaaaa");
@@ -23,11 +21,8 @@ const ConnectedWordsListBox  = ({words, selectSentence}) => {
   );
     return( <div  >
           {listItems}
-
       </div>);
 }
-
-
 
 function mapDispatchToProps(dispatch) {
   return {
@@ -35,8 +30,5 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-
-
 const WordsListBox = connect(null, mapDispatchToProps)(ConnectedWordsListBox);
-
 export default WordsListBox;
