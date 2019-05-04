@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import React from 'react';
-
+import PaperSheet from './PaperSheet';
 import Highlight from 'react-highlighter';
 
 const mapStateToProps = state => {
@@ -8,13 +8,15 @@ const mapStateToProps = state => {
 };
 
 const ConnectedSentenceBox = ({sentences, word}) => (
-  <ul className="sentenceBox">
+  <PaperSheet>
+  <ul>
   {sentences.map((value,id) => (
-    <li className="list-group-item" key={id}>
+    <li  key={id}>
       <Highlight search={word}>{value}</Highlight>
     </li>
   ))}
-</ul>
+  </ul>
+  </PaperSheet>
 )
 
 const SentenceBox = connect(mapStateToProps)(ConnectedSentenceBox);
