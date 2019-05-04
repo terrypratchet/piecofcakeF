@@ -16,26 +16,4 @@ const ConnectedSentenceBox = ({sentences}) => (
 )
 
 const SentenceBox = connect(mapStateToProps)(ConnectedSentenceBox);
-
-
-/*
-loadSentence(word){
-  console.log('word to find');
-  console.log(word);
-
-  axios
-    .get(`http://localhost:8080/sentences?word=${word}`)
-    .then(response => {
-      console.log(response.data);
-      this.setState({
-        sentences: response.data
-
-      });
-
-    });
-
-}
-*/
-
-
 export default SentenceBox;

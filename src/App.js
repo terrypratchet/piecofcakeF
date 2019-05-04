@@ -45,23 +45,6 @@ class App extends React.Component {
 
   }
 
-  loadSentence(word){
-    console.log('word to find');
-    console.log(word);
-
-    axios
-      .get(`http://localhost:8080/sentences?word=${word}`)
-      .then(response => {
-        console.log(response.data);
-        this.setState({
-          sentences: response.data
-
-        });
-
-      });
-
-  }
-
 
   hasMore(){
     return this.state.data.count > this.state.offset+50;
