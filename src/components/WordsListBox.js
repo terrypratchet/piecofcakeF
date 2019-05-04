@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { loadSentences } from "../actions/index";
+import SimpleList from "./SimpleList";
+
 
 const ConnectedWordsListBox  = ({words, loadSentences}) => {
   console.log("aaaaaaaaaaa");
@@ -13,14 +15,16 @@ const ConnectedWordsListBox  = ({words, loadSentences}) => {
     //this.props.loadSentences(word);
   }
 
+
   const listItems = Object.keys(words).map(key=>
     <li key={key} onClick={ ()=> handleOnClick(key)}>
       {key}: {words[key]}
     </li>
 
-  );
+  );//  {listItems}
     return( <div  >
-          {listItems}
+<SimpleList handleOnClick={handleOnClick} words={words} />
+
       </div>);
 }
 
