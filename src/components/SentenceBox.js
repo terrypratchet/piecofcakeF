@@ -1,15 +1,17 @@
 import { connect } from "react-redux";
 import React from 'react';
 
+import Highlight from 'react-highlighter';
+
 const mapStateToProps = state => {
-  return { sentences: state.sentences };
+  return { sentences: state.sentences, word: state.word };
 };
 
-const ConnectedSentenceBox = ({sentences}) => (
+const ConnectedSentenceBox = ({sentences, word}) => (
   <ul className="sentenceBox">
   {sentences.map((value,id) => (
     <li className="list-group-item" key={id}>
-      {value}
+      <Highlight search={word}>{value}</Highlight>
     </li>
   ))}
 </ul>

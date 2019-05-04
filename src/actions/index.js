@@ -1,12 +1,13 @@
-import { ADD_ARTICLE, SELECT_WORD, LOAD_SENTENCES } from "../constants/action-types";
+import {SELECT_WORD, LOAD_SENTENCES } from "../constants/action-types";
 import axios from 'axios';
 
-export function addArticle(payload) {
-  return { type: ADD_ARTICLE, payload };
+export function selectWord(word) {
+  return { type: SELECT_WORD, word };
 }
 
-export function selectSentence(word){
+export function loadSentences(word){
   return function(dispatch){
+    dispatch( { type: SELECT_WORD, word } );
     axios
       .get(`http://localhost:8080/sentences?word=${word}`)
       .then(response => {

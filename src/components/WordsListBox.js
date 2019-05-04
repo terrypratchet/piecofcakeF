@@ -1,16 +1,16 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { selectSentence } from "../actions/index";
+import { loadSentences } from "../actions/index";
 
-const ConnectedWordsListBox  = ({words, selectSentence}) => {
+const ConnectedWordsListBox  = ({words, loadSentences}) => {
   console.log("aaaaaaaaaaa");
   console.log(words);
 
   const handleOnClick = (word)=> {
     //event.preventDefault();
     console.log(word);
-    selectSentence(word);
-    //this.props.selectSentence(word);
+    loadSentences(word);
+    //this.props.loadSentences(word);
   }
 
   const listItems = Object.keys(words).map(key=>
@@ -26,9 +26,16 @@ const ConnectedWordsListBox  = ({words, selectSentence}) => {
 
 function mapDispatchToProps(dispatch) {
   return {
-    selectSentence: word => dispatch(selectSentence(word))
+    loadSentences: word => dispatch(loadSentences(word))
   };
 }
+/*
 
+function mapDispatchToProps(dispatch) {
+  return {
+    addArticle: article => dispatch(addArticle(article))
+  };
+}
+*/
 const WordsListBox = connect(null, mapDispatchToProps)(ConnectedWordsListBox);
 export default WordsListBox;
