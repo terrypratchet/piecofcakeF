@@ -8,15 +8,17 @@ const mapStateToProps = state => {
 };
 
 const ConnectedSentenceBox = ({sentences, word}) => (
-  <PaperSheet>
+ 
   <ul>
   {sentences.map((value,id) => (
     <li  key={id}>
-      <Highlight search={word}>{value}</Highlight>
+      <PaperSheet>
+        <Highlight search={word}>{value}</Highlight>
+      </PaperSheet>
+
     </li>
   ))}
   </ul>
-  </PaperSheet>
 )
 
 const SentenceBox = connect(mapStateToProps)(ConnectedSentenceBox);

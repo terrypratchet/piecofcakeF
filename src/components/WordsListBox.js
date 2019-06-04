@@ -5,12 +5,12 @@ import SimpleList from "./SimpleList";
 
 
 const ConnectedWordsListBox  = ({words, loadSentences}) => {
-  console.log("aaaaaaaaaaa");
+  console.log("aaaaaaaaaaaBB");
   console.log(words);
 
   const handleOnClick = (word)=> {
     //event.preventDefault();
-    console.log(word);
+    console.log(word +" ");
     loadSentences(word);
     //this.props.loadSentences(word);
   }
@@ -18,7 +18,7 @@ const ConnectedWordsListBox  = ({words, loadSentences}) => {
 
   const listItems = Object.keys(words).map(key=>
     <li key={key} onClick={ ()=> handleOnClick(key)}>
-      {key}: {words[key]}
+      {key}: {key}: {words[key]} arkadiusz
     </li>
 
   );//  {listItems}

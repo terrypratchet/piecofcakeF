@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import InfiniteScroll from 'react-infinite-scroller';
@@ -9,6 +9,10 @@ class App extends React.Component {
 
   constructor(props){
     super(props);
+    console.log("process.env.NODE_ENV:" + process.env.NODE_ENV);//development
+    console.log("process.env.REACT_APP_MOJA_ZMIEENA:" + process.env.REACT_APP_MOJA_ZMIEENA);
+    console.log("process.env.JAVA_HOME:" + process.env.JAVA_HOME);
+    console.log(process.env);
     this.state = {
       sentences: [],
       offset: 0,
@@ -31,7 +35,7 @@ class App extends React.Component {
     console.log("offset: " + this.state.offset);
     const offset = this.state.offset;
     axios
-      .get(`http://localhost:8080/greeting?sort=asc&limit=50&offset=${offset}&moreThan=1`)
+      .get(`/greeting?sort=asc&limit=50&offset=${offset}&moreThan=1`)
       .then(response => {
         console.log(response.data);
         this.setState({
@@ -56,7 +60,7 @@ class App extends React.Component {
   }
 
   render() {
-    console.log("heja-----------");
+    console.log("heja +++ -----------");
     console.log(this.state.data);
     return (
       <div>

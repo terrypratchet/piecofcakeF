@@ -26,7 +26,7 @@ function SimpleList({classes, handleOnClick, words}) {
 
 const listItems = Object.keys(words).map(key=>
   <ListItem button key={key} onClick={ ()=> handleOnClick(key)}>
-    <ListItemText primary={key + " " + words[key]} />
+    <ListItemText primary={key + ": " + words[key]} />
   </ListItem>
 );
 

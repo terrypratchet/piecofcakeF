@@ -9,9 +9,11 @@ export function loadSentences(word){
   return function(dispatch){
     dispatch( { type: SELECT_WORD, word } );
     axios
-      .get(`http://localhost:8080/sentences?word=${word}`)
+      .get(`/sentences?word=${word}`)
       .then(response => {
         console.log(response.data);
+        console.log("process.env:");
+        console.log(process.env);
         dispatch({ type: LOAD_SENTENCES, payload: response.data });
       });
 
